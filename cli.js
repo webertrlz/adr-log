@@ -21,6 +21,7 @@ var path = require('path');
 var args = utils.minimist(process.argv.slice(2), {
   boolean: ['i'],
   string: ['d'],
+  string: ['e'],
   string: ['p'],
   alias: {h: 'help'}
 });
@@ -40,6 +41,7 @@ if (!args.d && !args.i && !args.p && (args._.length==0) || args.h) {
     '  -d:     Scans the given <directory> for .md files.',
     '          (Without this flag, the current working directory is chosen as default.)',
     '',
+    '  -e      Exclude any files matching the given <pattern>',
     '  -p:     Path prefix for each ADR file path written in log',
     '          (Default is empty)',
     '',
@@ -67,9 +69,15 @@ console.log("adr log file:", adrLogFile);
 console.log("adr log dir:", adrLogDir);
 
 var headings = '';
-const globPattern = '!(' + adrLogFileName.slice(0,-3) + '*).md';
+const globPattern = '**/*.md';
 console.log("glob pattern:", globPattern);
 var filenames = glob.sync(globPattern, {cwd: adrLogDir});
+filenames = filenames.filter(filename => filename !== adrLogFile.replace(adrLogDir + '/', ''));
+if (args.e) {
+  var excluded = glob.sync(args.e, {cwd: adrLogDir});
+  console.log("excluded: ", excluded);
+  filenames = filenames.filter(filename => !excluded.includes(filename));
+}
 console.log("filenames:", filenames);
 
 // determine log entries
