@@ -12,6 +12,9 @@ We refer to [GitHub issues](https://github.com/adr/adr-log/issues) by using `#NU
 ### Added
 
 - New option `-p` - prefix for each ADR file path in log (useful when ADRs are in sub sub directory)
+- New option `-e` option to specify glob pattern for files to be excluded
+- Allow date prefixes as well as number prefixes
+- Allow specification of `index` or `date` properties in frontmatter
 
 ### Fixed
 
@@ -20,6 +23,7 @@ We refer to [GitHub issues](https://github.com/adr/adr-log/issues) by using `#NU
 ### Changed
 
 - Lists are now generated using `*` instead of `-`
+- Search recursively underneath the given directory
 
 ## [2.1.3] – 2019-11-15
 

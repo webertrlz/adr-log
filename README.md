@@ -23,7 +23,7 @@
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install -g adr-log
+npm install -g adr-log
 ```
 
 ## CLI
@@ -55,7 +55,7 @@ Consider a directory consisting of three files (`0000-example-1.md`, `0001-examp
 Execute following command:
 
 ```sh
-$ adr-log -d .
+adr-log -d .
 ```
 
 This outputs following log on your console:
@@ -90,6 +90,13 @@ Result in following `index.md`:
 
 <!-- adrlogstop -->
 ```
+
+### Alternative Indexing
+
+- search recursively underneath the given directory
+- allow date prefixes as well as number prefixes
+- allow specification of `index` or `date` properties in frontmatter
+- fallback to auto-numbering for ADRs without filename prefixes or frontmatter
 
 ## Developing
 
