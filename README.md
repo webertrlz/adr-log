@@ -1,3 +1,5 @@
+**Superseeded by [log4brains](https://github.com/thomvaill/log4brains)**
+
 # adr-log [![NPM version](https://img.shields.io/npm/v/adr-log.svg?style=flat)](https://www.npmjs.com/package/adr-log)
 
 > Generate an architectural decision log out of architectural decision records (ADRs).
