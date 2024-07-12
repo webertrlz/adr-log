@@ -1,5 +1,7 @@
 # Use Markdown Architectural Decision Records
 
+## Context and Problem Statement
+
 Should we record the architectural decisions made in this project?
 And if we do, how to structure these recordings?
 
@@ -12,12 +14,11 @@ And if we do, how to structure these recordings?
 * Other templates listed at <https://github.com/joelparkerhenderson/architecture_decision_record>
 * No records
 
+## Considered Options
+
+* Use Wiki
+* Use GitHub
+
 ## Decision Outcome
 
-* Chosen Alternative: MADR
-* Implicit assumptions should be made explicit.
-  Design documentation is important to enable people understanding the decisions later on.
-  See also [A rational design process: How and why to fake it](https://doi.org/10.1109/TSE.1986.6312940).
-* The MADR template is lean and fits our development style.
-
-<!-- Pros and cons of alternatives straight-forward to elicit and therefore not captured. -->
+Chosen option: "Use GitHub", because It's possible to review
